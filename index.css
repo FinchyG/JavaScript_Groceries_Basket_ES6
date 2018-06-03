@@ -1,0 +1,15 @@
+#sale_items {
+    display: inline-block;
+    width: 60%;
+    background-color: rgba(145, 156, 187, 0.5);
+    background-color: rgb(145,156,187);
+    border: 2px solid rgb(0, 0, 0);
+}
+
+#selected_items {
+    display: inline-block;
+    width: 20%;
+    background-color: rgba(145, 156, 187, 0.5);
+    background-color: rgb(145,156,187);
+    border: 2px solid rgb(0, 0, 0);
+}
