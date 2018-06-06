@@ -1,15 +1,25 @@
-#sale_items {
-    display: inline-block;
-    width: 60%;
-    background-color: rgba(145, 156, 187, 0.5);
-    background-color: rgb(145,156,187);
-    border: 2px solid rgb(0, 0, 0);
+select {
+    display: block;
 }
 
 #selected_items {
-    display: inline-block;
+    float: right;
     width: 20%;
     background-color: rgba(145, 156, 187, 0.5);
     background-color: rgb(145,156,187);
-    border: 2px solid rgb(0, 0, 0);
+    border: 2px solid rgb(20, 5, 49);
+}
+
+#available_fruits {
+    display: none;
+    width: 60%;
+}
+
+.foodtypes {
+    display: inline-block;
+    width: 10%;
+    height: 8em;
+    background-color: rgba(0, 4, 8, 0.5);
+    background-color: rgb(245, 247, 250);
+    border: 5px solid black;
 }

@@ -12,9 +12,9 @@
 
 <body>
 
-  <div id="sale_items">
+  <h1>Groceries Basket</h1>
 
-    <select id="food_categories" onchange="selected_category()">
+  <select id="food_categories" onchange="show_selected_category()">
       <option value="" disabled selected>Foodtype Categories</option>
       <option value="fruits">Fruits</option>
       <option value="vegetables">Vegetables</option>
@@ -22,9 +22,23 @@
       <option value="meats">Meats</option>
     </select>
 
-    <ul id="available_foods"></ul>
+  <div id="available_fruits">
+
+    <div class="foodtype">
+      <h4>Banana</h4>
+    </div>
+
+    <div class="foodtype">
+      <h4>Orange</h4>
+    </div>
+
+    <div class="foodtype">
+      <h4>Apple</h4>
+    </div>
 
   </div>
+    
+  
 
   <div id="selected_items">
 
