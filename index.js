@@ -9,9 +9,9 @@ function Foodtype(type, name, quantity, price) {
 
 // currently available fruits
 
-var banana = new Foodtype(fruit, banana, 5, "£0.20");
-var apple  = new Foodtype(fruit, apple, 5, "£0.60");
-var orange = new Foodtype(fruit, orange, 5, "£0.45");
+var banana = new Foodtype("fruit", "banana", 5, "£0.20");
+var apple  = new Foodtype("fruit", "apple", 5, "£0.60");
+var orange = new Foodtype("fruit", "orange", 5, "£0.45");
 
 // function to capture value of selected <select> option
 
@@ -26,3 +26,12 @@ function show_selected_category() {
     }
 }
 
+function add_banana_to_basket() {
+
+    var li = document.createElement("li");
+    var ul = document.getElementById("basket");
+    
+    li.appendChild(document.createTextNode(banana.name + " " + 1 + " " + banana.price));
+    ul.appendChild(li);
+
+}

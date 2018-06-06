@@ -5,9 +5,6 @@ select {
 #selected_items {
     float: right;
     width: 20%;
-    background-color: rgba(145, 156, 187, 0.5);
-    background-color: rgb(145,156,187);
-    border: 2px solid rgb(20, 5, 49);
 }
 
 #available_fruits {
@@ -22,4 +19,8 @@ select {
     background-color: rgba(0, 4, 8, 0.5);
     background-color: rgb(245, 247, 250);
     border: 5px solid black;
+}
+
+ul {
+    list-style-type: none;
 }
