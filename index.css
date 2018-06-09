@@ -2,14 +2,8 @@ select {
     display: block;
 }
 
-#selected_items {
-    float: right;
-    width: 20%;
-}
-
-#available_fruits {
-    display: none;
-    width: 60%;
+ul {
+    list-style-type: none;
 }
 
 .foodtypes {
@@ -21,6 +15,18 @@ select {
     border: 5px solid black;
 }
 
-ul {
-    list-style-type: none;
+.quantity_display {
+    display: inline-block;
+    border: 0.05em inset rgb(131, 170, 173);
+    padding: 0.1em 0.3em 0.1em 0.3em;
+}
+
+#selected_items {
+    float: right;
+    width: 20%;
+}
+
+#available_fruits {
+    display: none;
+    width: 60%;
 }

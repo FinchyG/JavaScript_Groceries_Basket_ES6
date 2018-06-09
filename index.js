@@ -37,7 +37,7 @@ function total_bill_amount() {
     var total_amount_formatted = total_amount.toFixed(2);
     var total_bill = " " + "£" + total_amount_formatted;
 
-    document.getElementById("total_bill").textContent = total_bill;
+    document.getElementById("total_bill").innerHTML = total_bill;
 
 }
 
@@ -59,6 +59,7 @@ function add_bananas_to_basket() {
         li.appendChild(document.createTextNode(banana.name + " " + banana.quantity + " " + "£" + total_price_formatted));
         ul.appendChild(li);
 
+        banana_quantity_display()
         total_bill_amount();
 
     }
@@ -69,12 +70,17 @@ function add_bananas_to_basket() {
 
 function quantity_plus_one_banana() {
 
-    banana.quantity += 1;
-    var total_price = banana.total_price();
-    var total_price_formatted = total_price.toFixed(2);
-    document.getElementById("banana_li").textContent = banana.name + " " + banana.quantity + " " + "£" + total_price_formatted;
+    if(banana.quantity >= 1) {
 
-    total_bill_amount();
+        banana.quantity += 1;
+        var total_price = banana.total_price();
+        var total_price_formatted = total_price.toFixed(2);
+        document.getElementById("banana_li").innerHTML = banana.name + " " + banana.quantity + " " + "£" + total_price_formatted;
+
+        banana_quantity_display()
+        total_bill_amount();
+
+    }
 
 }
 
@@ -88,8 +94,9 @@ function quantity_minus_one_banana() {
     }
     var total_price = banana.total_price();
     var total_price_formatted = total_price.toFixed(2);
-    document.getElementById("banana_li").textContent = banana.name + " " + banana.quantity + " " + "£" + total_price_formatted;
+    document.getElementById("banana_li").innerHTML = banana.name + " " + banana.quantity + " " + "£" + total_price_formatted;
 
+    banana_quantity_display()
     total_bill_amount();
 
 }
@@ -103,7 +110,15 @@ function remove_bananas_from_basket() {
 
     banana.add_to_basket = true;
 
+    banana_quantity_display()
     total_bill_amount();
+
+}
+
+function banana_quantity_display() {
+
+    var display_box = document.getElementById("banana_quantity_display");
+    display_box.innerHTML = banana.quantity; 
 
 }
 
@@ -125,6 +140,7 @@ function add_oranges_to_basket() {
         li.appendChild(document.createTextNode(orange.name + " " + orange.quantity + " " + "£" + total_price_formatted));
         ul.appendChild(li);
 
+        orange_quantity_display();
         total_bill_amount();
 
     }
@@ -135,12 +151,17 @@ function add_oranges_to_basket() {
 
 function quantity_plus_one_orange() {
 
-    orange.quantity += 1;
-    var total_price = orange.total_price();
-    var total_price_formatted = total_price.toFixed(2);
-    document.getElementById("orange_li").textContent = orange.name + " " + orange.quantity + " " + "£" + total_price_formatted;
+    if(orange.quantity >= 1) {
 
-    total_bill_amount();
+        orange.quantity += 1;
+        var total_price = orange.total_price();
+        var total_price_formatted = total_price.toFixed(2);
+        document.getElementById("orange_li").innerHTML = orange.name + " " + orange.quantity + " " + "£" + total_price_formatted;
+
+        orange_quantity_display();
+        total_bill_amount();
+
+    }
 
 }
 
@@ -149,10 +170,14 @@ function quantity_minus_one_orange() {
     if(orange.quantity >= 1) {
         orange.quantity -= 1;
     }
+    if(orange.quantity === 0) {
+        remove_oranges_from_basket();
+    }
     var total_price = orange.total_price();
     var total_price_formatted = total_price.toFixed(2);
-    document.getElementById("orange_li").textContent = orange.name + " " + orange.quantity + " " + "£" + total_price_formatted;
+    document.getElementById("orange_li").innerHTML = orange.name + " " + orange.quantity + " " + "£" + total_price_formatted;
 
+    orange_quantity_display();
     total_bill_amount();
 
 }
@@ -166,7 +191,15 @@ function remove_oranges_from_basket() {
 
     orange.add_to_basket = true;
 
+    orange_quantity_display();
     total_bill_amount();
+
+}
+
+function orange_quantity_display() {
+
+    var display_box = document.getElementById("orange_quantity_display");
+    display_box.innerHTML = orange.quantity; 
 
 }
 
@@ -188,6 +221,7 @@ function add_apples_to_basket() {
         li.appendChild(document.createTextNode(apple.name + " " + apple.quantity + " " + "£" + total_price_formatted));
         ul.appendChild(li);
 
+        apple_quantity_display();
         total_bill_amount();
 
     }
@@ -198,12 +232,17 @@ function add_apples_to_basket() {
 
 function quantity_plus_one_apple() {
 
-    apple.quantity += 1;
-    var total_price = apple.total_price();
-    var total_price_formatted = total_price.toFixed(2);
-    document.getElementById("apple_li").textContent = apple.name + " " + apple.quantity + " " + "£" + total_price_formatted;
+    if(apple.quantity >= 1) {
 
-    total_bill_amount();
+        apple.quantity += 1;
+        var total_price = apple.total_price();
+        var total_price_formatted = total_price.toFixed(2);
+        document.getElementById("apple_li").innerHTML = apple.name + " " + apple.quantity + " " + "£" + total_price_formatted;
+
+        apple_quantity_display();
+        total_bill_amount();
+
+    }
 
 }
 
@@ -212,10 +251,14 @@ function quantity_minus_one_apple() {
     if(apple.quantity >= 1) {
         apple.quantity -= 1;
     }
+    if(apple.quantity === 0) {
+        remove_apples_from_basket();
+    }
     var total_price = apple.total_price();
     var total_price_formatted = total_price.toFixed(2);
-    document.getElementById("apple_li").textContent = apple.name + " " + apple.quantity + " " + "£" + total_price_formatted;
+    document.getElementById("apple_li").innerHTML = apple.name + " " + apple.quantity + " " + "£" + total_price_formatted;
 
+    apple_quantity_display();
     total_bill_amount();
 
 }
@@ -229,6 +272,14 @@ function remove_apples_from_basket() {
 
     apple.add_to_basket = true;
 
+    apple_quantity_display();
     total_bill_amount();
+
+}
+
+function apple_quantity_display() {
+
+    var display_box = document.getElementById("apple_quantity_display");
+    display_box.innerHTML = apple.quantity; 
 
 }
