@@ -57,6 +57,7 @@ function quantity_minus_one_banana() {
 }
 
 function remove_bananas_from_basket() {
+    banana.quantity = 1;
     var li = document.getElementById("banana_li");
     var ul = document.getElementById("basket");
     ul.removeChild(li);
