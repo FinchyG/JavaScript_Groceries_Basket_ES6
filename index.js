@@ -83,6 +83,9 @@ function quantity_minus_one_banana() {
     if(banana.quantity >= 1) {
         banana.quantity -= 1;
     }
+    if(banana.quantity === 0) {
+        remove_bananas_from_basket();
+    }
     var total_price = banana.total_price();
     var total_price_formatted = total_price.toFixed(2);
     document.getElementById("banana_li").textContent = banana.name + " " + banana.quantity + " " + "£" + total_price_formatted;
