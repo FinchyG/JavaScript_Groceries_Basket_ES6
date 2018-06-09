@@ -1,244 +1,244 @@
-// code for fruit objects
+// code for bread objects
 
-// code for cauliflower object
+// code for baguette object
 
-function add_cauliflowers_to_basket() {
+function add_baguettes_to_basket() {
 
-    if(cauliflower.add_to_basket === true) {
+  if(baguette.add_to_basket === true) {
 
-        cauliflower.quantity += 1;
+      baguette.quantity += 1;
 
-        var li = document.createElement("li");
-        li.setAttribute("id", "cauliflower_li");
-        var ul = document.getElementById("basket");
+      var li = document.createElement("li");
+      li.setAttribute("id", "baguette_li");
+      var ul = document.getElementById("basket");
 
-        var total_price = cauliflower.total_price();
-        var total_price_formatted = total_price.toFixed(2);
-            
-        li.appendChild(document.createTextNode(cauliflower.name + " " + cauliflower.quantity + " " + "£" + total_price_formatted));
-        ul.appendChild(li);
+      var total_price = baguette.total_price();
+      var total_price_formatted = total_price.toFixed(2);
+          
+      li.appendChild(document.createTextNode(baguette.name + " " + baguette.quantity + " " + "£" + total_price_formatted));
+      ul.appendChild(li);
 
-        cauliflower_quantity_display()
-        total_bill_amount();
+      baguette_quantity_display()
+      total_bill_amount();
 
-    }
+  }
 
-    cauliflower.add_to_basket = false;
-
-}
-
-function quantity_plus_one_cauliflower() {
-
-    if(cauliflower.quantity >= 1) {
-
-        cauliflower.quantity += 1;
-        var total_price = cauliflower.total_price();
-        var total_price_formatted = total_price.toFixed(2);
-        document.getElementById("cauliflower_li").innerHTML = cauliflower.name + " " + cauliflower.quantity + " " + "£" + total_price_formatted;
-
-        cauliflower_quantity_display()
-        total_bill_amount();
-
-    }
+  baguette.add_to_basket = false;
 
 }
 
-function quantity_minus_one_cauliflower() {
+function quantity_plus_one_baguette() {
 
-    if(cauliflower.quantity >= 1) {
-        cauliflower.quantity -= 1;
-    }
-    if(cauliflower.quantity === 0) {
-        remove_cauliflowers_from_basket();
-    }
-    var total_price = cauliflower.total_price();
-    var total_price_formatted = total_price.toFixed(2);
-    document.getElementById("cauliflower_li").innerHTML = cauliflower.name + " " + cauliflower.quantity + " " + "£" + total_price_formatted;
+  if(baguette.quantity >= 1) {
 
-    cauliflower_quantity_display()
-    total_bill_amount();
+      baguette.quantity += 1;
+      var total_price = baguette.total_price();
+      var total_price_formatted = total_price.toFixed(2);
+      document.getElementById("baguette_li").innerHTML = baguette.name + " " + baguette.quantity + " " + "£" + total_price_formatted;
 
-}
+      baguette_quantity_display()
+      total_bill_amount();
 
-function remove_cauliflowers_from_basket() {
-
-    cauliflower.quantity = 0;
-    var li = document.getElementById("cauliflower_li");
-    var ul = document.getElementById("basket");
-    ul.removeChild(li);
-
-    cauliflower.add_to_basket = true;
-
-    cauliflower_quantity_display()
-    total_bill_amount();
+  }
 
 }
 
-function cauliflower_quantity_display() {
+function quantity_minus_one_baguette() {
 
-    var display_box = document.getElementById("cauliflower_quantity_display");
-    display_box.innerHTML = cauliflower.quantity; 
+  if(baguette.quantity >= 1) {
+      baguette.quantity -= 1;
+  }
+  if(baguette.quantity === 0) {
+      remove_baguettes_from_basket();
+  }
+  var total_price = baguette.total_price();
+  var total_price_formatted = total_price.toFixed(2);
+  document.getElementById("baguette_li").innerHTML = baguette.name + " " + baguette.quantity + " " + "£" + total_price_formatted;
 
-}
-
-// code for broccoli object
-
-function add_broccolis_to_basket() {
-
-    if(broccoli.add_to_basket === true) {
-
-        broccoli.quantity += 1;
-
-        var li = document.createElement("li");
-        li.setAttribute("id", "broccoli_li");
-        var ul = document.getElementById("basket");
-
-        var total_price = broccoli.total_price();
-        var total_price_formatted = total_price.toFixed(2);
-            
-        li.appendChild(document.createTextNode(broccoli.name + " " + broccoli.quantity + " " + "£" + total_price_formatted));
-        ul.appendChild(li);
-
-        broccoli_quantity_display();
-        total_bill_amount();
-
-    }
-
-    broccoli.add_to_basket = false;
+  baguette_quantity_display()
+  total_bill_amount();
 
 }
 
-function quantity_plus_one_broccoli() {
+function remove_baguettes_from_basket() {
 
-    if(broccoli.quantity >= 1) {
+  baguette.quantity = 0;
+  var li = document.getElementById("baguette_li");
+  var ul = document.getElementById("basket");
+  ul.removeChild(li);
 
-        broccoli.quantity += 1;
-        var total_price = broccoli.total_price();
-        var total_price_formatted = total_price.toFixed(2);
-        document.getElementById("broccoli_li").innerHTML = broccoli.name + " " + broccoli.quantity + " " + "£" + total_price_formatted;
+  baguette.add_to_basket = true;
 
-        broccoli_quantity_display();
-        total_bill_amount();
-
-    }
+  baguette_quantity_display()
+  total_bill_amount();
 
 }
 
-function quantity_minus_one_broccoli() {
+function baguette_quantity_display() {
 
-    if(broccoli.quantity >= 1) {
-        broccoli.quantity -= 1;
-    }
-    if(broccoli.quantity === 0) {
-        remove_broccolis_from_basket();
-    }
-    var total_price = broccoli.total_price();
-    var total_price_formatted = total_price.toFixed(2);
-    document.getElementById("broccoli_li").innerHTML = broccoli.name + " " + broccoli.quantity + " " + "£" + total_price_formatted;
-
-    broccoli_quantity_display();
-    total_bill_amount();
+  var display_box = document.getElementById("baguette_quantity_display");
+  display_box.innerHTML = baguette.quantity; 
 
 }
 
-function remove_broccolis_from_basket() {
+// code for loaf object
 
-    broccoli.quantity = 0;
-    var li = document.getElementById("broccoli_li");
-    var ul = document.getElementById("basket");
-    ul.removeChild(li);
+function add_loafs_to_basket() {
 
-    broccoli.add_to_basket = true;
+  if(loaf.add_to_basket === true) {
 
-    broccoli_quantity_display();
-    total_bill_amount();
+      loaf.quantity += 1;
 
-}
+      var li = document.createElement("li");
+      li.setAttribute("id", "loaf_li");
+      var ul = document.getElementById("basket");
 
-function broccoli_quantity_display() {
+      var total_price = loaf.total_price();
+      var total_price_formatted = total_price.toFixed(2);
+          
+      li.appendChild(document.createTextNode(loaf.name + " " + loaf.quantity + " " + "£" + total_price_formatted));
+      ul.appendChild(li);
 
-    var display_box = document.getElementById("broccoli_quantity_display");
-    display_box.innerHTML = broccoli.quantity; 
+      loaf_quantity_display();
+      total_bill_amount();
 
-}
+  }
 
-// code for turnip object
-
-function add_turnips_to_basket() {
-
-    if(turnip.add_to_basket === true) {
-
-        turnip.quantity += 1;
-
-        var li = document.createElement("li");
-        li.setAttribute("id", "turnip_li");
-        var ul = document.getElementById("basket");
-
-        var total_price = turnip.total_price();
-        var total_price_formatted = total_price.toFixed(2);
-            
-        li.appendChild(document.createTextNode(turnip.name + " " + turnip.quantity + " " + "£" + total_price_formatted));
-        ul.appendChild(li);
-
-        turnip_quantity_display();
-        total_bill_amount();
-
-    }
-
-    turnip.add_to_basket = false;
+  loaf.add_to_basket = false;
 
 }
 
-function quantity_plus_one_turnip() {
+function quantity_plus_one_loaf() {
 
-    if(turnip.quantity >= 1) {
+  if(loaf.quantity >= 1) {
 
-        turnip.quantity += 1;
-        var total_price = turnip.total_price();
-        var total_price_formatted = total_price.toFixed(2);
-        document.getElementById("turnip_li").innerHTML = turnip.name + " " + turnip.quantity + " " + "£" + total_price_formatted;
+      loaf.quantity += 1;
+      var total_price = loaf.total_price();
+      var total_price_formatted = total_price.toFixed(2);
+      document.getElementById("loaf_li").innerHTML = loaf.name + " " + loaf.quantity + " " + "£" + total_price_formatted;
 
-        turnip_quantity_display();
-        total_bill_amount();
+      loaf_quantity_display();
+      total_bill_amount();
 
-    }
-
-}
-
-function quantity_minus_one_turnip() {
-
-    if(turnip.quantity >= 1) {
-        turnip.quantity -= 1;
-    }
-    if(turnip.quantity === 0) {
-        remove_turnips_from_basket();
-    }
-    var total_price = turnip.total_price();
-    var total_price_formatted = total_price.toFixed(2);
-    document.getElementById("turnip_li").innerHTML = turnip.name + " " + turnip.quantity + " " + "£" + total_price_formatted;
-
-    turnip_quantity_display();
-    total_bill_amount();
+  }
 
 }
 
-function remove_turnips_from_basket() {
+function quantity_minus_one_loaf() {
 
-    turnip.quantity = 0;
-    var li = document.getElementById("turnip_li");
-    var ul = document.getElementById("basket");
-    ul.removeChild(li);
+  if(loaf.quantity >= 1) {
+      loaf.quantity -= 1;
+  }
+  if(loaf.quantity === 0) {
+      remove_loafs_from_basket();
+  }
+  var total_price = loaf.total_price();
+  var total_price_formatted = total_price.toFixed(2);
+  document.getElementById("loaf_li").innerHTML = loaf.name + " " + loaf.quantity + " " + "£" + total_price_formatted;
 
-    turnip.add_to_basket = true;
-
-    turnip_quantity_display();
-    total_bill_amount();
+  loaf_quantity_display();
+  total_bill_amount();
 
 }
 
-function turnip_quantity_display() {
+function remove_loafs_from_basket() {
 
-    var display_box = document.getElementById("turnip_quantity_display");
-    display_box.innerHTML = turnip.quantity; 
+  loaf.quantity = 0;
+  var li = document.getElementById("loaf_li");
+  var ul = document.getElementById("basket");
+  ul.removeChild(li);
+
+  loaf.add_to_basket = true;
+
+  loaf_quantity_display();
+  total_bill_amount();
+
+}
+
+function loaf_quantity_display() {
+
+  var display_box = document.getElementById("loaf_quantity_display");
+  display_box.innerHTML = loaf.quantity; 
+
+}
+
+// code for roll object
+
+function add_rolls_to_basket() {
+
+  if(roll.add_to_basket === true) {
+
+      roll.quantity += 1;
+
+      var li = document.createElement("li");
+      li.setAttribute("id", "roll_li");
+      var ul = document.getElementById("basket");
+
+      var total_price = roll.total_price();
+      var total_price_formatted = total_price.toFixed(2);
+          
+      li.appendChild(document.createTextNode(roll.name + " " + roll.quantity + " " + "£" + total_price_formatted));
+      ul.appendChild(li);
+
+      roll_quantity_display();
+      total_bill_amount();
+
+  }
+
+  roll.add_to_basket = false;
+
+}
+
+function quantity_plus_one_roll() {
+
+  if(roll.quantity >= 1) {
+
+      roll.quantity += 1;
+      var total_price = roll.total_price();
+      var total_price_formatted = total_price.toFixed(2);
+      document.getElementById("roll_li").innerHTML = roll.name + " " + roll.quantity + " " + "£" + total_price_formatted;
+
+      roll_quantity_display();
+      total_bill_amount();
+
+  }
+
+}
+
+function quantity_minus_one_roll() {
+
+  if(roll.quantity >= 1) {
+      roll.quantity -= 1;
+  }
+  if(roll.quantity === 0) {
+      remove_rolls_from_basket();
+  }
+  var total_price = roll.total_price();
+  var total_price_formatted = total_price.toFixed(2);
+  document.getElementById("roll_li").innerHTML = roll.name + " " + roll.quantity + " " + "£" + total_price_formatted;
+
+  roll_quantity_display();
+  total_bill_amount();
+
+}
+
+function remove_rolls_from_basket() {
+
+  roll.quantity = 0;
+  var li = document.getElementById("roll_li");
+  var ul = document.getElementById("basket");
+  ul.removeChild(li);
+
+  roll.add_to_basket = true;
+
+  roll_quantity_display();
+  total_bill_amount();
+
+}
+
+function roll_quantity_display() {
+
+  var display_box = document.getElementById("roll_quantity_display");
+  display_box.innerHTML = roll.quantity; 
 
 }
