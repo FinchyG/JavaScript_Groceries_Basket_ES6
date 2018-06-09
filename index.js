@@ -13,10 +13,10 @@ Foodtype.prototype.total_price = function() { return this.quantity * this.price}
 // currently available fruits
 
 var banana = new Foodtype("fruit", "banana", 0, 0.20, true);
-var apple  = new Foodtype("fruit", "apple", 0, "£0.60", true);
-var orange = new Foodtype("fruit", "orange", 0, "£0.45", true);
+var orange = new Foodtype("fruit", "orange", 0, 0.45, true);
+var apple  = new Foodtype("fruit", "apple", 0, 0.60, true);
 
-// function to capture value of selected <select> option
+// function to capture value of <select> option and display available foods
 
 function show_selected_category() {
 
@@ -28,6 +28,20 @@ function show_selected_category() {
         available_fruits.style.display = "inline-block";
     }
 }
+
+// code for total bill at bottom of basket
+
+function total_bill_amount() {
+
+    var total_amount = banana.total_price() + orange.total_price() + apple.total_price();
+    var total_amount_formatted = total_amount.toFixed(2);
+    var total_bill = " " + "£" + total_amount_formatted;
+
+    document.getElementById("total_bill").textContent = total_bill;
+
+}
+
+// code for banana object
 
 function add_bananas_to_basket() {
 
@@ -84,18 +98,71 @@ function remove_bananas_from_basket() {
     var ul = document.getElementById("basket");
     ul.removeChild(li);
 
+    banana.add_to_basket = true;
+
     total_bill_amount();
 
 }
 
-// code for total bill at bottom of basket
+// code for orange object
 
-function total_bill_amount() {
+function add_oranges_to_basket() {
 
-    var total_amount = banana.total_price();
-    var total_amount_formatted = total_amount.toFixed(2);
-    var total_bill = " " + "£" + total_amount_formatted;
+    if(orange.add_to_basket === true) {
 
-    document.getElementById("total_bill").textContent = total_bill;
+        orange.quantity += 1;
+
+        var li = document.createElement("li");
+        li.setAttribute("id", "orange_li");
+        var ul = document.getElementById("basket");
+
+        var total_price = orange.total_price();
+        var total_price_formatted = total_price.toFixed(2);
+            
+        li.appendChild(document.createTextNode(orange.name + " " + orange.quantity + " " + "£" + total_price_formatted));
+        ul.appendChild(li);
+
+        total_bill_amount();
+
+    }
+
+    orange.add_to_basket = false;
+
+}
+
+function quantity_plus_one_orange() {
+
+    orange.quantity += 1;
+    var total_price = orange.total_price();
+    var total_price_formatted = total_price.toFixed(2);
+    document.getElementById("orange_li").textContent = orange.name + " " + orange.quantity + " " + "£" + total_price_formatted;
+
+    total_bill_amount();
+
+}
+
+function quantity_minus_one_orange() {
+
+    if(orange.quantity >= 1) {
+        orange.quantity -= 1;
+    }
+    var total_price = orange.total_price();
+    var total_price_formatted = total_price.toFixed(2);
+    document.getElementById("orange_li").textContent = orange.name + " " + orange.quantity + " " + "£" + total_price_formatted;
+
+    total_bill_amount();
+
+}
+
+function remove_oranges_from_basket() {
+
+    orange.quantity = 0;
+    var li = document.getElementById("orange_li");
+    var ul = document.getElementById("basket");
+    ul.removeChild(li);
+
+    orange.add_to_basket = true;
+
+    total_bill_amount();
 
 }
