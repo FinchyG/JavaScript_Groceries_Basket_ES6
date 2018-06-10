@@ -15,7 +15,7 @@
   <h1>Groceries Store</h1>
 
   <select id="food_categories" onchange="show_selected_category()">
-      <option value="" disabled selected>Foodtype Categories</option>
+      <option value="" disabled selected>Select Foodtype</option>
       <option value="fruits">Fruits</option>
       <option value="vegetables">Vegetables</option>
       <option value="breads">Breads</option>
@@ -149,6 +149,9 @@
   <div id="selected_items">
 
     <h2>Basket</h2>
+    <span class="column_header">Food  |</span>
+    <span class="column_header">  Quantity  |</span>
+    <span class="column_header">   Price</span>
     
     <ul id="basket"></ul>
 
