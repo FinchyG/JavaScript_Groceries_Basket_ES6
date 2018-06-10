@@ -14,19 +14,25 @@ Foodtype.prototype.total_price = function() { return this.quantity * this.price}
 
 var banana = new Foodtype("fruit", "banana", 0, 0.20, true);
 var orange = new Foodtype("fruit", "orange", 0, 0.45, true);
-var apple  = new Foodtype("fruit", "apple", 0, 0.60, true);
+var apple = new Foodtype("fruit", "apple", 0, 0.60, true);
 
 // currently available vegetables
 
 var cauliflower = new Foodtype("vegetable", "cauliflower", 0, 1.00, true);
 var broccoli = new Foodtype("vegetable", "broccoli", 0, 0.80, true);
-var turnip  = new Foodtype("vegetable", "turnip", 0, 0.95, true);
+var turnip = new Foodtype("vegetable", "turnip", 0, 0.95, true);
 
 // currently available breads
 
 var baguette = new Foodtype("bread", "baguette", 0, 1.00, true);
 var loaf = new Foodtype("bread", "loaf", 0, 1.30, true);
-var roll  = new Foodtype("bread", "roll", 0, 0.15, true);
+var roll = new Foodtype("bread", "roll", 0, 0.15, true);
+
+// currently available meats
+
+var beef = new Foodtype("meat", "beef", 0, 3.00, true);
+var pork = new Foodtype("meat", "pork", 0, 2.00, true);
+var chicken = new Foodtype("meat", "chicken", 0, 1.00, true);
 
 // function to capture value of <select> option and display available foods
 
@@ -44,18 +50,30 @@ function show_selected_category() {
             available_fruits.style.display = "inline-block";
             available_vegetables.style.display = "none";
             available_breads.style.display = "none";
+            available_meats.style.display = "none";
             break;
 
         case "vegetables":
             available_vegetables.style.display = "inline-block";
             available_fruits.style.display = "none";
             available_breads.style.display = "none";
+            available_meats.style.display = "none";
             break;
 
         case "breads":
             available_breads.style.display = "inline-block";
             available_fruits.style.display = "none";
             available_vegetables.style.display = "none";
+            available_meats.style.display = "none";
+            break;
+
+        case "meats":
+            available_meats.style.display = "inline-block";
+            available_fruits.style.display = "none";
+            available_vegetables.style.display = "none";
+            available_breads.style.display = "none";
+            break;
+
     }
         
 }
@@ -66,7 +84,7 @@ function total_bill_amount() {
 
     var total_amount = banana.total_price() + orange.total_price() + apple.total_price() + cauliflower.total_price() +
                        broccoli.total_price() + turnip.total_price() + baguette.total_price() + loaf.total_price() + 
-                       roll.total_price();
+                       roll.total_price() + beef.total_price() + pork.total_price() + chicken.total_price();
     var total_amount_formatted = total_amount.toFixed(2);
     var total_bill = " " + "£" + total_amount_formatted;
 
@@ -591,7 +609,7 @@ function add_baguettes_to_basket() {
   
     baguette.add_to_basket = false;
   
-  }
+}
   
   function quantity_plus_one_baguette() {
   
@@ -807,4 +825,249 @@ function add_baguettes_to_basket() {
     var display_box = document.getElementById("roll_quantity_display");
     display_box.innerHTML = roll.quantity; 
   
-  }  
+  }
+
+  // code for meat objects
+
+// code for beef object
+
+function add_beefs_to_basket() {
+
+    if(beef.add_to_basket === true) {
+  
+        beef.quantity += 1;
+  
+        var li = document.createElement("li");
+        li.setAttribute("id", "beef_li");
+        var ul = document.getElementById("basket");
+  
+        var total_price = beef.total_price();
+        var total_price_formatted = total_price.toFixed(2);
+            
+        li.appendChild(document.createTextNode(beef.name + " " + beef.quantity + " " + "£" + total_price_formatted));
+        ul.appendChild(li);
+  
+        beef_quantity_display()
+        total_bill_amount();
+  
+    }
+  
+    beef.add_to_basket = false;
+  
+  }
+  
+  function quantity_plus_one_beef() {
+  
+    if(beef.quantity >= 1) {
+  
+        beef.quantity += 1;
+        var total_price = beef.total_price();
+        var total_price_formatted = total_price.toFixed(2);
+        document.getElementById("beef_li").innerHTML = beef.name + " " + beef.quantity + " " + "£" + total_price_formatted;
+  
+        beef_quantity_display()
+        total_bill_amount();
+  
+    }
+  
+  }
+  
+  function quantity_minus_one_beef() {
+  
+    if(beef.quantity >= 1) {
+        beef.quantity -= 1;
+    }
+    if(beef.quantity === 0) {
+        remove_beefs_from_basket();
+    }
+    var total_price = beef.total_price();
+    var total_price_formatted = total_price.toFixed(2);
+    document.getElementById("beef_li").innerHTML = beef.name + " " + beef.quantity + " " + "£" + total_price_formatted;
+  
+    beef_quantity_display()
+    total_bill_amount();
+  
+  }
+  
+  function remove_beefs_from_basket() {
+  
+    beef.quantity = 0;
+    var li = document.getElementById("beef_li");
+    var ul = document.getElementById("basket");
+    ul.removeChild(li);
+  
+    beef.add_to_basket = true;
+  
+    beef_quantity_display()
+    total_bill_amount();
+  
+  }
+  
+  function beef_quantity_display() {
+  
+    var display_box = document.getElementById("beef_quantity_display");
+    display_box.innerHTML = beef.quantity; 
+  
+  }
+  
+  // code for pork object
+  
+  function add_porks_to_basket() {
+  
+    if(pork.add_to_basket === true) {
+  
+        pork.quantity += 1;
+  
+        var li = document.createElement("li");
+        li.setAttribute("id", "pork_li");
+        var ul = document.getElementById("basket");
+  
+        var total_price = pork.total_price();
+        var total_price_formatted = total_price.toFixed(2);
+            
+        li.appendChild(document.createTextNode(pork.name + " " + pork.quantity + " " + "£" + total_price_formatted));
+        ul.appendChild(li);
+  
+        pork_quantity_display();
+        total_bill_amount();
+  
+    }
+  
+    pork.add_to_basket = false;
+  
+  }
+  
+  function quantity_plus_one_pork() {
+  
+    if(pork.quantity >= 1) {
+  
+        pork.quantity += 1;
+        var total_price = pork.total_price();
+        var total_price_formatted = total_price.toFixed(2);
+        document.getElementById("pork_li").innerHTML = pork.name + " " + pork.quantity + " " + "£" + total_price_formatted;
+  
+        pork_quantity_display();
+        total_bill_amount();
+  
+    }
+  
+  }
+  
+  function quantity_minus_one_pork() {
+  
+    if(pork.quantity >= 1) {
+        pork.quantity -= 1;
+    }
+    if(pork.quantity === 0) {
+        remove_porks_from_basket();
+    }
+    var total_price = pork.total_price();
+    var total_price_formatted = total_price.toFixed(2);
+    document.getElementById("pork_li").innerHTML = pork.name + " " + pork.quantity + " " + "£" + total_price_formatted;
+  
+    pork_quantity_display();
+    total_bill_amount();
+  
+  }
+  
+  function remove_porks_from_basket() {
+  
+    pork.quantity = 0;
+    var li = document.getElementById("pork_li");
+    var ul = document.getElementById("basket");
+    ul.removeChild(li);
+  
+    pork.add_to_basket = true;
+  
+    pork_quantity_display();
+    total_bill_amount();
+  
+  }
+  
+  function pork_quantity_display() {
+  
+    var display_box = document.getElementById("pork_quantity_display");
+    display_box.innerHTML = pork.quantity; 
+  
+  }
+  
+  // code for chicken object
+  
+  function add_chickens_to_basket() {
+  
+    if(chicken.add_to_basket === true) {
+  
+        chicken.quantity += 1;
+  
+        var li = document.createElement("li");
+        li.setAttribute("id", "chicken_li");
+        var ul = document.getElementById("basket");
+  
+        var total_price = chicken.total_price();
+        var total_price_formatted = total_price.toFixed(2);
+            
+        li.appendChild(document.createTextNode(chicken.name + " " + chicken.quantity + " " + "£" + total_price_formatted));
+        ul.appendChild(li);
+  
+        chicken_quantity_display();
+        total_bill_amount();
+  
+    }
+  
+    chicken.add_to_basket = false;
+  
+  }
+  
+  function quantity_plus_one_chicken() {
+  
+    if(chicken.quantity >= 1) {
+  
+        chicken.quantity += 1;
+        var total_price = chicken.total_price();
+        var total_price_formatted = total_price.toFixed(2);
+        document.getElementById("chicken_li").innerHTML = chicken.name + " " + chicken.quantity + " " + "£" + total_price_formatted;
+  
+        chicken_quantity_display();
+        total_bill_amount();
+  
+    }
+  
+  }
+  
+  function quantity_minus_one_chicken() {
+  
+    if(chicken.quantity >= 1) {
+        chicken.quantity -= 1;
+    }
+    if(chicken.quantity === 0) {
+        remove_chickens_from_basket();
+    }
+    var total_price = chicken.total_price();
+    var total_price_formatted = total_price.toFixed(2);
+    document.getElementById("chicken_li").innerHTML = chicken.name + " " + chicken.quantity + " " + "£" + total_price_formatted;
+  
+    chicken_quantity_display();
+    total_bill_amount();
+  
+  }
+  
+  function remove_chickens_from_basket() {
+  
+    chicken.quantity = 0;
+    var li = document.getElementById("chicken_li");
+    var ul = document.getElementById("basket");
+    ul.removeChild(li);
+  
+    chicken.add_to_basket = true;
+  
+    chicken_quantity_display();
+    total_bill_amount();
+  
+  }
+  
+  function chicken_quantity_display() {
+  
+    var display_box = document.getElementById("chicken_quantity_display");
+    display_box.innerHTML = chicken.quantity; 
+  
+  }

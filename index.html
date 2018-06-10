@@ -115,6 +115,37 @@
 
   </div>
 
+  <div id="available_meats">
+
+    <div class="foodtype">
+      <h4>Beef</h4>
+      <button onclick="add_beefs_to_basket()">Add to Basket</button>
+      <button onclick="quantity_minus_one_beef()">-</button>
+      <p class="quantity_display" id="beef_quantity_display">0</p>
+      <button onclick="quantity_plus_one_beef()">+</button>
+      <button onclick="remove_beefs_from_basket()">Remove from Basket</button>
+    </div>
+
+    <div class="foodtype">
+      <h4>Pork</h4>
+      <button onclick="add_porks_to_basket()">Add to Basket</button>
+      <button onclick="quantity_minus_one_pork()">-</button>
+      <p class="quantity_display" id="pork_quantity_display">0</p>
+      <button onclick="quantity_plus_one_pork()">+</button>
+      <button onclick="remove_porks_from_basket()">Remove from Basket</button>
+    </div>
+
+    <div class="foodtype">
+      <h4>Chicken</h4>
+      <button onclick="add_chickens_to_basket()">Add to Basket</button>
+      <button onclick="quantity_minus_one_chicken()">-</button>
+      <p class="quantity_display" id="chicken_quantity_display">0</p>
+      <button onclick="quantity_plus_one_chicken()">+</button>
+      <button onclick="remove_chickens_from_basket()">Remove from Basket</button>
+    </div>
+
+  </div>
+
   <div id="selected_items">
     
     <ul id="basket"></ul>
