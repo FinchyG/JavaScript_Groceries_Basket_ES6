@@ -1,4 +1,4 @@
-// foodtype constructor function
+// foodtype constructor const
 
 function Foodtype(type, name, quantity, price, add_to_basket) {
     this.type          = type;
@@ -34,9 +34,9 @@ var beef = new Foodtype("meat", "beef", 0, 3.00, true);
 var pork = new Foodtype("meat", "pork", 0, 2.00, true);
 var chicken = new Foodtype("meat", "chicken", 0, 1.00, true);
 
-// function to capture value of <select> option and display available foods
+// const to capture value of <select> option and display available foods
 
-function show_selected_category() {
+const show_selected_category = () => {
 
     var selected_category = document.getElementById("food_categories").value;
 
@@ -80,7 +80,7 @@ function show_selected_category() {
 
 // code for total bill at bottom of basket
 
-function total_bill_amount() {
+const total_bill_amount = () => {
 
     var total_amount = banana.total_price() + orange.total_price() + apple.total_price() + cauliflower.total_price() +
                        broccoli.total_price() + turnip.total_price() + baguette.total_price() + loaf.total_price() + 
@@ -96,7 +96,7 @@ function total_bill_amount() {
 
 // code for banana object
 
-function add_bananas_to_basket() {
+const add_bananas_to_basket = () => {
 
     if(banana.add_to_basket === true) {
 
@@ -121,7 +121,7 @@ function add_bananas_to_basket() {
 
 }
 
-function quantity_plus_one_banana() {
+const quantity_plus_one_banana = () => {
 
     if(banana.quantity >= 1) {
 
@@ -137,7 +137,7 @@ function quantity_plus_one_banana() {
 
 }
 
-function quantity_minus_one_banana() {
+const quantity_minus_one_banana = () => {
 
     if(banana.quantity >= 1) {
         banana.quantity -= 1;
@@ -154,7 +154,7 @@ function quantity_minus_one_banana() {
 
 }
 
-function remove_bananas_from_basket() {
+const remove_bananas_from_basket = () => {
 
     banana.quantity = 0;
     var li = document.getElementById("banana_li");
@@ -168,7 +168,7 @@ function remove_bananas_from_basket() {
 
 }
 
-function banana_quantity_display() {
+const banana_quantity_display = () => {
 
     var display_box = document.getElementById("banana_quantity_display");
     display_box.innerHTML = banana.quantity; 
@@ -177,7 +177,7 @@ function banana_quantity_display() {
 
 // code for orange object
 
-function add_oranges_to_basket() {
+const add_oranges_to_basket = () => {
 
     if(orange.add_to_basket === true) {
 
@@ -202,7 +202,7 @@ function add_oranges_to_basket() {
 
 }
 
-function quantity_plus_one_orange() {
+const quantity_plus_one_orange = () => {
 
     if(orange.quantity >= 1) {
 
@@ -218,7 +218,7 @@ function quantity_plus_one_orange() {
 
 }
 
-function quantity_minus_one_orange() {
+const quantity_minus_one_orange = () => {
 
     if(orange.quantity >= 1) {
         orange.quantity -= 1;
@@ -235,7 +235,7 @@ function quantity_minus_one_orange() {
 
 }
 
-function remove_oranges_from_basket() {
+const remove_oranges_from_basket = () => {
 
     orange.quantity = 0;
     var li = document.getElementById("orange_li");
@@ -249,7 +249,7 @@ function remove_oranges_from_basket() {
 
 }
 
-function orange_quantity_display() {
+const orange_quantity_display = () => {
 
     var display_box = document.getElementById("orange_quantity_display");
     display_box.innerHTML = orange.quantity; 
@@ -258,7 +258,7 @@ function orange_quantity_display() {
 
 // code for apple object
 
-function add_apples_to_basket() {
+const add_apples_to_basket = () => {
 
     if(apple.add_to_basket === true) {
 
@@ -283,7 +283,7 @@ function add_apples_to_basket() {
 
 }
 
-function quantity_plus_one_apple() {
+const quantity_plus_one_apple = () => {
 
     if(apple.quantity >= 1) {
 
@@ -299,7 +299,7 @@ function quantity_plus_one_apple() {
 
 }
 
-function quantity_minus_one_apple() {
+const quantity_minus_one_apple = () => {
 
     if(apple.quantity >= 1) {
         apple.quantity -= 1;
@@ -316,7 +316,7 @@ function quantity_minus_one_apple() {
 
 }
 
-function remove_apples_from_basket() {
+const remove_apples_from_basket = () => {
 
     apple.quantity = 0;
     var li = document.getElementById("apple_li");
@@ -330,7 +330,7 @@ function remove_apples_from_basket() {
 
 }
 
-function apple_quantity_display() {
+const apple_quantity_display = () => {
 
     var display_box = document.getElementById("apple_quantity_display");
     display_box.innerHTML = apple.quantity; 
@@ -341,7 +341,7 @@ function apple_quantity_display() {
 
 // code for cauliflower object
 
-function add_cauliflowers_to_basket() {
+const add_cauliflowers_to_basket = () => {
 
     if(cauliflower.add_to_basket === true) {
 
@@ -366,7 +366,7 @@ function add_cauliflowers_to_basket() {
 
 }
 
-function quantity_plus_one_cauliflower() {
+const quantity_plus_one_cauliflower = () => {
 
     if(cauliflower.quantity >= 1) {
 
@@ -382,7 +382,7 @@ function quantity_plus_one_cauliflower() {
 
 }
 
-function quantity_minus_one_cauliflower() {
+const quantity_minus_one_cauliflower = () => {
 
     if(cauliflower.quantity >= 1) {
         cauliflower.quantity -= 1;
@@ -399,7 +399,7 @@ function quantity_minus_one_cauliflower() {
 
 }
 
-function remove_cauliflowers_from_basket() {
+const remove_cauliflowers_from_basket = () => {
 
     cauliflower.quantity = 0;
     var li = document.getElementById("cauliflower_li");
@@ -413,7 +413,7 @@ function remove_cauliflowers_from_basket() {
 
 }
 
-function cauliflower_quantity_display() {
+const cauliflower_quantity_display = () => {
 
     var display_box = document.getElementById("cauliflower_quantity_display");
     display_box.innerHTML = cauliflower.quantity; 
@@ -422,7 +422,7 @@ function cauliflower_quantity_display() {
 
 // code for broccoli object
 
-function add_broccolis_to_basket() {
+const add_broccolis_to_basket = () => {
 
     if(broccoli.add_to_basket === true) {
 
@@ -447,7 +447,7 @@ function add_broccolis_to_basket() {
 
 }
 
-function quantity_plus_one_broccoli() {
+const quantity_plus_one_broccoli = () => {
 
     if(broccoli.quantity >= 1) {
 
@@ -463,7 +463,7 @@ function quantity_plus_one_broccoli() {
 
 }
 
-function quantity_minus_one_broccoli() {
+const quantity_minus_one_broccoli = () => {
 
     if(broccoli.quantity >= 1) {
         broccoli.quantity -= 1;
@@ -480,7 +480,7 @@ function quantity_minus_one_broccoli() {
 
 }
 
-function remove_broccolis_from_basket() {
+const remove_broccolis_from_basket = () => {
 
     broccoli.quantity = 0;
     var li = document.getElementById("broccoli_li");
@@ -494,7 +494,7 @@ function remove_broccolis_from_basket() {
 
 }
 
-function broccoli_quantity_display() {
+const broccoli_quantity_display = () => {
 
     var display_box = document.getElementById("broccoli_quantity_display");
     display_box.innerHTML = broccoli.quantity; 
@@ -503,7 +503,7 @@ function broccoli_quantity_display() {
 
 // code for turnip object
 
-function add_turnips_to_basket() {
+const add_turnips_to_basket = () => {
 
     if(turnip.add_to_basket === true) {
 
@@ -528,7 +528,7 @@ function add_turnips_to_basket() {
 
 }
 
-function quantity_plus_one_turnip() {
+const quantity_plus_one_turnip = () => {
 
     if(turnip.quantity >= 1) {
 
@@ -544,7 +544,7 @@ function quantity_plus_one_turnip() {
 
 }
 
-function quantity_minus_one_turnip() {
+const quantity_minus_one_turnip = () => {
 
     if(turnip.quantity >= 1) {
         turnip.quantity -= 1;
@@ -561,7 +561,7 @@ function quantity_minus_one_turnip() {
 
 }
 
-function remove_turnips_from_basket() {
+const remove_turnips_from_basket = () => {
 
     turnip.quantity = 0;
     var li = document.getElementById("turnip_li");
@@ -575,7 +575,7 @@ function remove_turnips_from_basket() {
 
 }
 
-function turnip_quantity_display() {
+const turnip_quantity_display = () => {
 
     var display_box = document.getElementById("turnip_quantity_display");
     display_box.innerHTML = turnip.quantity; 
@@ -586,7 +586,7 @@ function turnip_quantity_display() {
 
 // code for baguette object
 
-function add_baguettes_to_basket() {
+const add_baguettes_to_basket = () => {
 
     if(baguette.add_to_basket === true) {
   
@@ -611,7 +611,7 @@ function add_baguettes_to_basket() {
   
 }
   
-  function quantity_plus_one_baguette() {
+  const quantity_plus_one_baguette = () => {
   
     if(baguette.quantity >= 1) {
   
@@ -627,7 +627,7 @@ function add_baguettes_to_basket() {
   
   }
   
-  function quantity_minus_one_baguette() {
+  const quantity_minus_one_baguette = () => {
   
     if(baguette.quantity >= 1) {
         baguette.quantity -= 1;
@@ -644,7 +644,7 @@ function add_baguettes_to_basket() {
   
   }
   
-  function remove_baguettes_from_basket() {
+  const remove_baguettes_from_basket = () => {
   
     baguette.quantity = 0;
     var li = document.getElementById("baguette_li");
@@ -658,7 +658,7 @@ function add_baguettes_to_basket() {
   
   }
   
-  function baguette_quantity_display() {
+  const baguette_quantity_display = () => {
   
     var display_box = document.getElementById("baguette_quantity_display");
     display_box.innerHTML = baguette.quantity; 
@@ -667,7 +667,7 @@ function add_baguettes_to_basket() {
   
   // code for loaf object
   
-  function add_loafs_to_basket() {
+  const add_loafs_to_basket = () => {
   
     if(loaf.add_to_basket === true) {
   
@@ -692,7 +692,7 @@ function add_baguettes_to_basket() {
   
   }
   
-  function quantity_plus_one_loaf() {
+  const quantity_plus_one_loaf = () => {
   
     if(loaf.quantity >= 1) {
   
@@ -708,7 +708,7 @@ function add_baguettes_to_basket() {
   
   }
   
-  function quantity_minus_one_loaf() {
+  const quantity_minus_one_loaf = () => {
   
     if(loaf.quantity >= 1) {
         loaf.quantity -= 1;
@@ -725,7 +725,7 @@ function add_baguettes_to_basket() {
   
   }
   
-  function remove_loafs_from_basket() {
+  const remove_loafs_from_basket = () => {
   
     loaf.quantity = 0;
     var li = document.getElementById("loaf_li");
@@ -739,7 +739,7 @@ function add_baguettes_to_basket() {
   
   }
   
-  function loaf_quantity_display() {
+  const loaf_quantity_display = () => {
   
     var display_box = document.getElementById("loaf_quantity_display");
     display_box.innerHTML = loaf.quantity; 
@@ -748,7 +748,7 @@ function add_baguettes_to_basket() {
   
   // code for roll object
   
-  function add_rolls_to_basket() {
+  const add_rolls_to_basket = () => {
   
     if(roll.add_to_basket === true) {
   
@@ -773,7 +773,7 @@ function add_baguettes_to_basket() {
   
   }
   
-  function quantity_plus_one_roll() {
+  const quantity_plus_one_roll = () => {
   
     if(roll.quantity >= 1) {
   
@@ -789,7 +789,7 @@ function add_baguettes_to_basket() {
   
   }
   
-  function quantity_minus_one_roll() {
+  const quantity_minus_one_roll = () => {
   
     if(roll.quantity >= 1) {
         roll.quantity -= 1;
@@ -806,7 +806,7 @@ function add_baguettes_to_basket() {
   
   }
   
-  function remove_rolls_from_basket() {
+  const remove_rolls_from_basket = () => {
   
     roll.quantity = 0;
     var li = document.getElementById("roll_li");
@@ -820,7 +820,7 @@ function add_baguettes_to_basket() {
   
   }
   
-  function roll_quantity_display() {
+  const roll_quantity_display = () => {
   
     var display_box = document.getElementById("roll_quantity_display");
     display_box.innerHTML = roll.quantity; 
@@ -831,7 +831,7 @@ function add_baguettes_to_basket() {
 
 // code for beef object
 
-function add_beefs_to_basket() {
+const add_beefs_to_basket = () => {
 
     if(beef.add_to_basket === true) {
   
@@ -856,7 +856,7 @@ function add_beefs_to_basket() {
   
   }
   
-  function quantity_plus_one_beef() {
+  const quantity_plus_one_beef = () => {
   
     if(beef.quantity >= 1) {
   
@@ -872,7 +872,7 @@ function add_beefs_to_basket() {
   
   }
   
-  function quantity_minus_one_beef() {
+  const quantity_minus_one_beef = () => {
   
     if(beef.quantity >= 1) {
         beef.quantity -= 1;
@@ -889,7 +889,7 @@ function add_beefs_to_basket() {
   
   }
   
-  function remove_beefs_from_basket() {
+  const remove_beefs_from_basket = () => {
   
     beef.quantity = 0;
     var li = document.getElementById("beef_li");
@@ -903,7 +903,7 @@ function add_beefs_to_basket() {
   
   }
   
-  function beef_quantity_display() {
+  const beef_quantity_display = () => {
   
     var display_box = document.getElementById("beef_quantity_display");
     display_box.innerHTML = beef.quantity; 
@@ -912,7 +912,7 @@ function add_beefs_to_basket() {
   
   // code for pork object
   
-  function add_porks_to_basket() {
+  const add_porks_to_basket = () => {
   
     if(pork.add_to_basket === true) {
   
@@ -937,7 +937,7 @@ function add_beefs_to_basket() {
   
   }
   
-  function quantity_plus_one_pork() {
+  const quantity_plus_one_pork = () => {
   
     if(pork.quantity >= 1) {
   
@@ -953,7 +953,7 @@ function add_beefs_to_basket() {
   
   }
   
-  function quantity_minus_one_pork() {
+  const quantity_minus_one_pork = () => {
   
     if(pork.quantity >= 1) {
         pork.quantity -= 1;
@@ -970,7 +970,7 @@ function add_beefs_to_basket() {
   
   }
   
-  function remove_porks_from_basket() {
+  const remove_porks_from_basket = () => {
   
     pork.quantity = 0;
     var li = document.getElementById("pork_li");
@@ -984,7 +984,7 @@ function add_beefs_to_basket() {
   
   }
   
-  function pork_quantity_display() {
+  const pork_quantity_display = () => {
   
     var display_box = document.getElementById("pork_quantity_display");
     display_box.innerHTML = pork.quantity; 
@@ -993,7 +993,7 @@ function add_beefs_to_basket() {
   
   // code for chicken object
   
-  function add_chickens_to_basket() {
+  const add_chickens_to_basket = () => {
   
     if(chicken.add_to_basket === true) {
   
@@ -1018,7 +1018,7 @@ function add_beefs_to_basket() {
   
   }
   
-  function quantity_plus_one_chicken() {
+  const quantity_plus_one_chicken = () => {
   
     if(chicken.quantity >= 1) {
   
@@ -1034,7 +1034,7 @@ function add_beefs_to_basket() {
   
   }
   
-  function quantity_minus_one_chicken() {
+  const quantity_minus_one_chicken = () => {
   
     if(chicken.quantity >= 1) {
         chicken.quantity -= 1;
@@ -1051,7 +1051,7 @@ function add_beefs_to_basket() {
   
   }
   
-  function remove_chickens_from_basket() {
+  const remove_chickens_from_basket = () => {
   
     chicken.quantity = 0;
     var li = document.getElementById("chicken_li");
@@ -1065,7 +1065,7 @@ function add_beefs_to_basket() {
   
   }
   
-  function chicken_quantity_display() {
+  const chicken_quantity_display = () => {
   
     var display_box = document.getElementById("chicken_quantity_display");
     display_box.innerHTML = chicken.quantity; 
