@@ -1,38 +1,44 @@
 // foodtype constructor const
 
-function Foodtype(type, name, quantity, price, add_to_basket) {
+class Foodtype {
+    constructor(type, name, quantity, price, add_to_basket) {
     this.type          = type;
     this.name          = name;
     this.quantity      = quantity;
     this.price         = price;
     this.add_to_basket = add_to_basket;
+    }
+    get total_price() {
+        return this.calc_total_price;
+    }
+    calc_total_price() {
+        return this.price * this.quantity;
+    }
 }
-
-Foodtype.prototype.total_price = function() { return this.quantity * this.price};
 
 // currently available fruits
 
-var banana = new Foodtype("fruit", "banana", 0, 0.20, true);
-var orange = new Foodtype("fruit", "orange", 0, 0.45, true);
-var apple = new Foodtype("fruit", "apple", 0, 0.60, true);
+const banana = new Foodtype("fruit", "banana", 0, 0.20, true);
+const orange = new Foodtype("fruit", "orange", 0, 0.45, true);
+const apple = new Foodtype("fruit", "apple", 0, 0.60, true);
 
 // currently available vegetables
 
-var cauliflower = new Foodtype("vegetable", "cauliflower", 0, 1.00, true);
-var broccoli = new Foodtype("vegetable", "broccoli", 0, 0.80, true);
-var turnip = new Foodtype("vegetable", "turnip", 0, 0.95, true);
+const cauliflower = new Foodtype("vegetable", "cauliflower", 0, 1.00, true);
+const broccoli = new Foodtype("vegetable", "broccoli", 0, 0.80, true);
+const turnip = new Foodtype("vegetable", "turnip", 0, 0.95, true);
 
 // currently available breads
 
-var baguette = new Foodtype("bread", "baguette", 0, 1.00, true);
-var loaf = new Foodtype("bread", "loaf", 0, 1.30, true);
-var roll = new Foodtype("bread", "roll", 0, 0.15, true);
+const baguette = new Foodtype("bread", "baguette", 0, 1.00, true);
+const loaf = new Foodtype("bread", "loaf", 0, 1.30, true);
+const roll = new Foodtype("bread", "roll", 0, 0.15, true);
 
 // currently available meats
 
-var beef = new Foodtype("meat", "beef", 0, 3.00, true);
-var pork = new Foodtype("meat", "pork", 0, 2.00, true);
-var chicken = new Foodtype("meat", "chicken", 0, 1.00, true);
+const beef = new Foodtype("meat", "beef", 0, 3.00, true);
+const pork = new Foodtype("meat", "pork", 0, 2.00, true);
+const chicken = new Foodtype("meat", "chicken", 0, 1.00, true);
 
 // const to capture value of <select> option and display available foods
 
