@@ -42,13 +42,14 @@ const chicken = new Foodtype("meat", "chicken", 0, 1.00, true);
 
 // const to capture value of <select> option and display available foods
 
-const show_selected_category = () => {
+const show_selected_category = () => { // eslint-disable-line no-unused-vars
 
     var selected_category = document.getElementById("food_categories").value;
 
     var available_fruits = document.getElementById("available_fruits");
     var available_vegetables = document.getElementById("available_vegetables");
     var available_breads = document.getElementById("available_breads");
+    var available_meats = document.getElementById("available_meats");
 
     switch(selected_category) {
 
@@ -102,7 +103,7 @@ const total_bill_amount = () => {
 
 // code for banana object
 
-const add_bananas_to_basket = () => {
+const add_bananas_to_basket = () => { // eslint-disable-line no-unused-vars
 
     if(banana.add_to_basket === true) {
 
@@ -127,7 +128,7 @@ const add_bananas_to_basket = () => {
 
 }
 
-const quantity_plus_one_banana = () => {
+const quantity_plus_one_banana = () => { // eslint-disable-line no-unused-vars
 
     if(banana.quantity >= 1) {
 
@@ -143,7 +144,7 @@ const quantity_plus_one_banana = () => {
 
 }
 
-const quantity_minus_one_banana = () => {
+const quantity_minus_one_banana = () => { // eslint-disable-line no-unused-vars
 
     if(banana.quantity >= 1) {
         banana.quantity -= 1;
@@ -183,7 +184,7 @@ const banana_quantity_display = () => {
 
 // code for orange object
 
-const add_oranges_to_basket = () => {
+const add_oranges_to_basket = () => { // eslint-disable-line no-unused-vars
 
     if(orange.add_to_basket === true) {
 
@@ -208,7 +209,7 @@ const add_oranges_to_basket = () => {
 
 }
 
-const quantity_plus_one_orange = () => {
+const quantity_plus_one_orange = () => { // eslint-disable-line no-unused-vars
 
     if(orange.quantity >= 1) {
 
@@ -224,7 +225,7 @@ const quantity_plus_one_orange = () => {
 
 }
 
-const quantity_minus_one_orange = () => {
+const quantity_minus_one_orange = () => { // eslint-disable-line no-unused-vars
 
     if(orange.quantity >= 1) {
         orange.quantity -= 1;
@@ -264,7 +265,7 @@ const orange_quantity_display = () => {
 
 // code for apple object
 
-const add_apples_to_basket = () => {
+const add_apples_to_basket = () => { // eslint-disable-line no-unused-vars
 
     if(apple.add_to_basket === true) {
 
@@ -289,7 +290,7 @@ const add_apples_to_basket = () => {
 
 }
 
-const quantity_plus_one_apple = () => {
+const quantity_plus_one_apple = () => { // eslint-disable-line no-unused-vars
 
     if(apple.quantity >= 1) {
 
@@ -305,7 +306,7 @@ const quantity_plus_one_apple = () => {
 
 }
 
-const quantity_minus_one_apple = () => {
+const quantity_minus_one_apple = () => { // eslint-disable-line no-unused-vars
 
     if(apple.quantity >= 1) {
         apple.quantity -= 1;
@@ -347,7 +348,7 @@ const apple_quantity_display = () => {
 
 // code for cauliflower object
 
-const add_cauliflowers_to_basket = () => {
+const add_cauliflowers_to_basket = () => { // eslint-disable-line no-unused-vars
 
     if(cauliflower.add_to_basket === true) {
 
@@ -372,7 +373,7 @@ const add_cauliflowers_to_basket = () => {
 
 }
 
-const quantity_plus_one_cauliflower = () => {
+const quantity_plus_one_cauliflower = () => { // eslint-disable-line no-unused-vars
 
     if(cauliflower.quantity >= 1) {
 
@@ -388,7 +389,7 @@ const quantity_plus_one_cauliflower = () => {
 
 }
 
-const quantity_minus_one_cauliflower = () => {
+const quantity_minus_one_cauliflower = () => { // eslint-disable-line no-unused-vars
 
     if(cauliflower.quantity >= 1) {
         cauliflower.quantity -= 1;
@@ -428,7 +429,7 @@ const cauliflower_quantity_display = () => {
 
 // code for broccoli object
 
-const add_broccolis_to_basket = () => {
+const add_broccolis_to_basket = () => { // eslint-disable-line no-unused-vars
 
     if(broccoli.add_to_basket === true) {
 
@@ -453,7 +454,7 @@ const add_broccolis_to_basket = () => {
 
 }
 
-const quantity_plus_one_broccoli = () => {
+const quantity_plus_one_broccoli = () => { // eslint-disable-line no-unused-vars
 
     if(broccoli.quantity >= 1) {
 
@@ -469,7 +470,7 @@ const quantity_plus_one_broccoli = () => {
 
 }
 
-const quantity_minus_one_broccoli = () => {
+const quantity_minus_one_broccoli = () => { // eslint-disable-line no-unused-vars
 
     if(broccoli.quantity >= 1) {
         broccoli.quantity -= 1;
@@ -509,7 +510,7 @@ const broccoli_quantity_display = () => {
 
 // code for turnip object
 
-const add_turnips_to_basket = () => {
+const add_turnips_to_basket = () => { // eslint-disable-line no-unused-vars
 
     if(turnip.add_to_basket === true) {
 
@@ -534,7 +535,7 @@ const add_turnips_to_basket = () => {
 
 }
 
-const quantity_plus_one_turnip = () => {
+const quantity_plus_one_turnip = () => { // eslint-disable-line no-unused-vars
 
     if(turnip.quantity >= 1) {
 
@@ -550,7 +551,7 @@ const quantity_plus_one_turnip = () => {
 
 }
 
-const quantity_minus_one_turnip = () => {
+const quantity_minus_one_turnip = () => { // eslint-disable-line no-unused-vars
 
     if(turnip.quantity >= 1) {
         turnip.quantity -= 1;
@@ -592,7 +593,7 @@ const turnip_quantity_display = () => {
 
 // code for baguette object
 
-const add_baguettes_to_basket = () => {
+const add_baguettes_to_basket = () => { // eslint-disable-line no-unused-vars
 
     if(baguette.add_to_basket === true) {
   
@@ -617,7 +618,7 @@ const add_baguettes_to_basket = () => {
   
 }
   
-  const quantity_plus_one_baguette = () => {
+  const quantity_plus_one_baguette = () => { // eslint-disable-line no-unused-vars
   
     if(baguette.quantity >= 1) {
   
@@ -633,7 +634,7 @@ const add_baguettes_to_basket = () => {
   
   }
   
-  const quantity_minus_one_baguette = () => {
+  const quantity_minus_one_baguette = () => { // eslint-disable-line no-unused-vars
   
     if(baguette.quantity >= 1) {
         baguette.quantity -= 1;
@@ -673,7 +674,7 @@ const add_baguettes_to_basket = () => {
   
   // code for loaf object
   
-  const add_loafs_to_basket = () => {
+  const add_loafs_to_basket = () => { // eslint-disable-line no-unused-vars
   
     if(loaf.add_to_basket === true) {
   
@@ -698,7 +699,7 @@ const add_baguettes_to_basket = () => {
   
   }
   
-  const quantity_plus_one_loaf = () => {
+  const quantity_plus_one_loaf = () => { // eslint-disable-line no-unused-vars
   
     if(loaf.quantity >= 1) {
   
@@ -714,7 +715,7 @@ const add_baguettes_to_basket = () => {
   
   }
   
-  const quantity_minus_one_loaf = () => {
+  const quantity_minus_one_loaf = () => { // eslint-disable-line no-unused-vars
   
     if(loaf.quantity >= 1) {
         loaf.quantity -= 1;
@@ -754,7 +755,7 @@ const add_baguettes_to_basket = () => {
   
   // code for roll object
   
-  const add_rolls_to_basket = () => {
+  const add_rolls_to_basket = () => { // eslint-disable-line no-unused-vars
   
     if(roll.add_to_basket === true) {
   
@@ -779,8 +780,8 @@ const add_baguettes_to_basket = () => {
   
   }
   
-  const quantity_plus_one_roll = () => {
-  
+  const quantity_plus_one_roll = () => { // eslint-disable-line no-unused-vars
+
     if(roll.quantity >= 1) {
   
         roll.quantity += 1;
@@ -795,7 +796,7 @@ const add_baguettes_to_basket = () => {
   
   }
   
-  const quantity_minus_one_roll = () => {
+  const quantity_minus_one_roll = () => { // eslint-disable-line no-unused-vars
   
     if(roll.quantity >= 1) {
         roll.quantity -= 1;
@@ -837,7 +838,7 @@ const add_baguettes_to_basket = () => {
 
 // code for beef object
 
-const add_beefs_to_basket = () => {
+const add_beefs_to_basket = () => { // eslint-disable-line no-unused-vars
 
     if(beef.add_to_basket === true) {
   
@@ -862,7 +863,7 @@ const add_beefs_to_basket = () => {
   
   }
   
-  const quantity_plus_one_beef = () => {
+  const quantity_plus_one_beef = () => { // eslint-disable-line no-unused-vars
   
     if(beef.quantity >= 1) {
   
@@ -878,7 +879,7 @@ const add_beefs_to_basket = () => {
   
   }
   
-  const quantity_minus_one_beef = () => {
+  const quantity_minus_one_beef = () => { // eslint-disable-line no-unused-vars
   
     if(beef.quantity >= 1) {
         beef.quantity -= 1;
@@ -918,7 +919,7 @@ const add_beefs_to_basket = () => {
   
   // code for pork object
   
-  const add_porks_to_basket = () => {
+  const add_porks_to_basket = () => { // eslint-disable-line no-unused-vars
   
     if(pork.add_to_basket === true) {
   
@@ -943,7 +944,7 @@ const add_beefs_to_basket = () => {
   
   }
   
-  const quantity_plus_one_pork = () => {
+  const quantity_plus_one_pork = () => { // eslint-disable-line no-unused-vars
   
     if(pork.quantity >= 1) {
   
@@ -959,7 +960,7 @@ const add_beefs_to_basket = () => {
   
   }
   
-  const quantity_minus_one_pork = () => {
+  const quantity_minus_one_pork = () => { // eslint-disable-line no-unused-vars
   
     if(pork.quantity >= 1) {
         pork.quantity -= 1;
@@ -999,7 +1000,7 @@ const add_beefs_to_basket = () => {
   
   // code for chicken object
   
-  const add_chickens_to_basket = () => {
+  const add_chickens_to_basket = () => { // eslint-disable-line no-unused-vars
   
     if(chicken.add_to_basket === true) {
   
@@ -1024,7 +1025,7 @@ const add_beefs_to_basket = () => {
   
   }
   
-  const quantity_plus_one_chicken = () => {
+  const quantity_plus_one_chicken = () => { // eslint-disable-line no-unused-vars
   
     if(chicken.quantity >= 1) {
   
@@ -1040,7 +1041,7 @@ const add_beefs_to_basket = () => {
   
   }
   
-  const quantity_minus_one_chicken = () => {
+  const quantity_minus_one_chicken = () => { // eslint-disable-line no-unused-vars
   
     if(chicken.quantity >= 1) {
         chicken.quantity -= 1;
